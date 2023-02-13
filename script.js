@@ -1,34 +1,48 @@
 // Assignment code here
 
+let generateBtn = document.querySelector("#generate");
 
-// Get references to the #generate element
-// generateBtn = document.querySelector("#generate");
-let length = window.prompt("Password Length: Enter the desired number of characters between 8-128")
 // Write password to the #password input
-    
-    // Arrays    
-    var char = "";
-    var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    var lowerCase = "abcdefghijklmnopqurstuvwxyz"
-    var specialChar = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
-    var numeric = "0123456789"
+  // Arrays    
+  var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  var lowerCase = "abcdefghijklmnopqurstuvwxyz"
+  var specialChar = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+  var numeric = "0123456789"
 
-    // Variables
-    var confirmChar = "";
-    var confirmUpperCase;
-    var confirmLowerCase;
-    var confirmSpecChar;
-    var confirmNumeric; 
+  // Variables
+  var confirmUpperCase;
+  var confirmLowerCase;
+  var confirmSpecChar;
+  var confirmNumeric; 
     
     // Prompts
   function generatePassword() {
-    var passwordLength = window.prompt("Password Length: Enter a password length between 8-128 characters.");
-      if (char < 7 || char > 129 ){
-        alert ("Please choose a number between 8 and 128.");
-      }return null;
-
+    
+    let pwLength = parseInt(
+      prompt("How long should your password be (Enter 8-128)?")
+    )
   }
-  //passwordText.value = password;
+     
+    if (pwLength < 8 && pwLength > 128 ) {
+    } else { 
+        alert ("Must have a minimum of 8 and max of 128 characters.");
+      }
+    let upperCase = confirm ("Use upper case letters?");
+    let lowerCase = confirm ("Use lower case letters?");
+    let specialChar = confirm ("Use special characters?");
+    let numeric = confirm ("Use numbers?");
+    
+    if (
+      upperCase === false &&
+      lowerCase === false &&
+      specialChar === false &&
+      numeric === false
+    ) {
+      alert ("Must select one or more character types to continue.")
+    }
+  
+
+  passwordText.value = password;
 
 
 
