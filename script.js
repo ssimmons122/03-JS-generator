@@ -1,27 +1,23 @@
 //JS password generator
 
-var generateBtn = document.querySelector("#generate");
+var generateBtn = document.querySelector("#write");
 
 // Write password to the #password input
   // Arrays    
   var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
   var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","u","r","s","t","u","v","w","x","y","z"]
-  var specialChar = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
-  var numeric = "0123456789"
+  var specialChar = ["!","#","$","%","&","'","(",")","*","+",",","-",".","/",";","<","=",">","?","@","[","\\","^","_","`","{","|","}",'~']
+  var numeric = ['0','1','2','3','4','5','6','7','8','9']
 
   // Variables
-  var confirmUpperCase;
-  var confirmLowerCase;
-  var confirmSpecChar;
-  var confirmNumeric; 
+ //
     
-    // Prompts
-  function generatePassword() {
     // length
-    //var pwLength = parseInt(
-      //prompt("How long should your password be (Enter 8-128)?")
-    //)
-    var pwLength = window.prompt("Enter the length of your password between 8-128 characters.", "8-128")
+  function writePassword() {
+    let pwLength = parseInt(
+      prompt("Enter the length of your password between 8-128 characters.")
+    )
+    
   }
      
     if (pwLength > 8 && pwLength < 128 ) {
@@ -44,12 +40,43 @@ var generateBtn = document.querySelector("#generate");
   
 
 
-  passwordText.value = password;
+  function writePassword() {
+    //calls in the user choices from passwordOptions()
+    let userPasswordChoices = passwordOptions();
+    let userChoice = "";
+    let password = "";
+  
+    if (userPasswordChoices.upperCase) {
+      userChoice += upperCaseLetters.join("");
+    }
+    if (userPasswordChoices.lowers) {
+      userChoice += lowerCaseLetters.join("");
+    }
+    if (userPasswordChoices.nums) {
+      userChoice += numericChars.join("");
+    }
+    if (userPasswordChoices.specials) {
+      userChoice += specChars.join("");
+    }
+  
+    for (let i = 0; i < userPasswordChoices.strength; i++) {
+      let random = Math.floor(Math.random() * userChoice.length);
+      password += userChoice.charAt(random);
+    }
+  
+    return password;
+  }
+    
+  // Write password to the #password input
+  function writePassword() {
+    
+    const finalPassword = generatePassword();
+  
+    var passwordText = document.querySelector("#password");
+  
+    passwordText.value = finalPassword;
+  }
+  
+  // Add event listener to generate button
+  generateBtn.addEventListener("click", writePassword);
 
-
-
-// Add event listener to generate button
-const button = document.querySelector("button")
-button.addEventListener("click", e => {
-  console.log(e)
-})
