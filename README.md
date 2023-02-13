@@ -1,3 +1,1 @@
-# Password Generator
-
-## boop boop
+# 03-JS-generator
