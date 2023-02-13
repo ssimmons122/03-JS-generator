@@ -5,8 +5,8 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
   // Arrays    
   var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-  var lowerCase = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,u,r,s,t,u,v,w,x,y,z"
-  var specialChar = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+  var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","u","r","s","t","u","v","w","x","y","z"]
+  var specialChar = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
   var numeric = "0123456789"
 
   // Variables
@@ -21,7 +21,7 @@ var generateBtn = document.querySelector("#generate");
     //var pwLength = parseInt(
       //prompt("How long should your password be (Enter 8-128)?")
     //)
-    var length = Number(prompt("Enter the length of your password between 8-128 characters."))
+    var pwLength = window.prompt("Enter the length of your password between 8-128 characters.", "8-128")
   }
      
     if (pwLength > 8 && pwLength < 128 ) {
