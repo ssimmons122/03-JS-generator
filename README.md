@@ -7,8 +7,8 @@ This application can be used by an employee to generate a random password based 
 Click on the link below to begin.  Prompts will guide the user to choose their own adventure, evenually generating a password that matches their selected criteria. 
 
 ## Credits
-Starter code cloned from Xandromus
-As always, help from the gals study group
+Starter code cloned from Xandromus, and 
+as always, help from the gals study group
 
 ## Link 
 
