@@ -1,26 +1,22 @@
 //JS password generator
 
-const generateBtn = document.querySelector("#generate"); {
-
+const generateBtn = document.querySelector("#generate"); 
+   
 // Write password to the #password input
 
-const user_Choice = 
-   upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-   lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","u","r","s","t","u","v","w","x","y","z"]
-   specialChar = ["!","#","$","%","&","'","(",")","*","+",",","-",".","/",";","<","=",">","?","@","[","\\","^","_","`","{","|","}",'~']
-   numeric = ['0','1','2','3','4','5','6','7','8','9']
+{const user_Choice = 
+   upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"] ,
+   lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+   specialChar = ["!","#","$","%","&","'","(",")","*","+",",","-",".","/",";","<","=",">","?","@","[","\\","^","_","`","{","|","}",'~'], 
+   numeric = [0,1,2,3,4,5,6,7,8,9] 
+  } ;
 
-}  ;   
-    // length
-  function writePassword() {
-    var pwLength = "";
+  var length = window.prompt("Enter a password length between 8-128 characters."); 
+if (length > 8 && length < 128 ) {
+} else  
+  window.alert("Must have a minimum of 8 and max of 128 characters.");
 
-    var length = window.prompt("Enter a password length between 8-128 characters."); 
-      //if (length > 8 && length < 128 ) {
-    //} else { 
-        //window.alert("Must have a minimum of 8 and max of 128 characters.");
-      }
-    
+
     var upperCase = window.confirm ("Use upper case letters?");
       if (upperCase) {
         pwLength += user_Choice.upperCase
@@ -55,9 +51,12 @@ const user_Choice =
     var password = "";
     for (let i = 0; i < length; i++) {
       password += pwLength[Math.floor(Math.random() * pwLength.length)]
-    }
+    
+
+    console.log(password());
+
     return password;
   
   
-  console.log(password());
+  }
 
